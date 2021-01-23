@@ -1,0 +1,154 @@
+
+*{
+
+    padding: 0;
+    margin: 0;
+    font-family: tahoma;
+}
+
+html,body{
+
+    min-height: 100%;
+    width: 100%;
+    line-height: 1.59;
+    margin: 0;
+    color: #333;
+    background: #fb527a;
+    overflow: hidden;
+}
+
+.row{
+
+    width: 80%;
+    max-width: 800px;
+    margin: 2rem auto;
+
+    &::after{
+
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    .sec{
+
+        background: #ebebeb;
+        text-align: center;
+        width: calc(50% - 4rem - 4px - 40px);
+        margin: 0 10px;
+        float: left;
+        padding: 3em 2em;
+        border: 4px solid white;
+        margin-left: 22px;
+
+        .btn{
+
+            display: inline-block;
+            padding: 10px 30px;
+            margin-top: 4rem;
+            background: #fb527a;
+            border: 2px solid white;
+            color: white;
+            z-index: 10;
+            border-radius: 50px;
+            transition: all 0.3s ease-in;
+
+            &:hover{
+
+                background: #ce2b52;
+                color: white;
+            }
+        }
+    }
+}
+
+.hs{
+
+    opacity: 0;
+    display: none;
+}
+
+input[id^='model']:checked + .modal-wrapper{
+
+    opacity: 1;
+    z-index: 100;
+    transform: scale(1);
+    transition: all 0.2s ease-out;
+    height: 100vh;
+    width: 100%;
+}
+
+input[id^='model']:checked + .modal-wrapper > .modalbox{
+
+    opacity: 1;
+    z-index: 100;
+    transform: scale(1);
+    transition: all 0.3s ease-out 0.2s;
+}
+
+.modal-wrapper{
+
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.2s ease-in;
+    z-index: -10;
+    position: absolute;
+    background: rgba(0,0,0,0.8);
+    top: 0;
+    left: 0;
+
+    .modalbox{
+
+        opacity: 0;
+        transform: scale(0.5);
+        transition: all 0.2s ease-in;
+        background: #fb527a;
+        color: white;
+        height: auto;
+        width: 50%;
+        margin: 2em auto;
+        border: 2px solid white;
+        padding: 1rem 2rem;
+
+        .model-content{
+
+            padding: 1em 2em;
+
+            .modal-header{
+
+                position: relative;
+
+                .btn-close{
+
+                    position: absolute;
+                    color: #333;
+                    font-family: tahoma;
+                    background: white;
+                    padding: 0.5em;
+                    width: 2em;
+                    height: 2em;
+                    line-height: 2em;
+                    text-align: center;
+                    border-radius: 50%;
+                    top: -0.5em;
+                    right: 0;
+                    transition: all 0.5s ease-in;
+                    font-weight: bold;
+
+                    &:hover{
+
+                        font-weight: bold;
+                        color: #333;
+                        background: white;
+                    }
+                }
+            }
+
+            .model-content-body{
+
+                width: 90%;
+                margin: 0 auto;
+            }
+        }
+    }
+}
